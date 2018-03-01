@@ -1,0 +1,61 @@
+.App {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.Chooser {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.upperCard {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.HowAreYou {
+  text-align: center;
+  font-size: 1.1em;
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+}
+
+.bigEmoji {
+  padding: 3px;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.History {
+  overflow-y: scroll;
+  overflow-x: auto;
+  flex-grow: 2;
+}
+
+.MoodEntry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1em;
+  padding-bottom: 0;
+}
+
+.MoodEntry .Score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.MoodEntry .Time {
+  flex: 2;
+}
+
+.MoodEntry .Time .Date {
+  font-size: 24px;
+}
