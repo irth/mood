@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<div
+  className="Chooser"
+>
+  <a
+    className="bigEmoji"
+    onClick={[Function]}
+  >
+    <span
+      className="undefined"
+      style={
+        Object {
+          "fontSize": 50,
+        }
+      }
+    >
+      <img
+        alt="😶"
+        className={undefined}
+        src="http://twemoji.maxcdn.com/2/72x72/1f636.png"
+        style={
+          Object {
+            "height": "1em",
+            "margin": "0 .05em 0 .1em",
+            "verticalAlign": "-0.1em",
+            "width": "1em",
+          }
+        }
+      />
+    </span>
+  </a>
+  <a
+    className="bigEmoji"
+    onClick={[Function]}
+  >
+    <span
+      className="undefined"
+      style={
+        Object {
+          "fontSize": 50,
+        }
+      }
+    >
+      <img
+        alt="😞"
+        className={undefined}
+        src="http://twemoji.maxcdn.com/2/72x72/1f61e.png"
+        style={
+          Object {
+            "height": "1em",
+            "margin": "0 .05em 0 .1em",
+            "verticalAlign": "-0.1em",
+            "width": "1em",
+          }
+        }
+      />
+    </span>
+  </a>
+  <a
+    className="bigEmoji"
+    onClick={[Function]}
+  >
+    <span
+      className="undefined"
+      style={
+        Object {
+          "fontSize": 50,
+        }
+      }
+    >
+      <img
+        alt="😐"
+        className={undefined}
+        src="http://twemoji.maxcdn.com/2/72x72/1f610.png"
+        style={
+          Object {
+            "height": "1em",
+            "margin": "0 .05em 0 .1em",
+            "verticalAlign": "-0.1em",
+            "width": "1em",
+          }
+        }
+      />
+    </span>
+  </a>
+  <a
+    className="bigEmoji"
+    onClick={[Function]}
+  >
+    <span
+      className="undefined"
+      style={
+        Object {
+          "fontSize": 50,
+        }
+      }
+    >
+      <img
+        alt="😊"
+        className={undefined}
+        src="http://twemoji.maxcdn.com/2/72x72/1f60a.png"
+        style={
+          Object {
+            "height": "1em",
+            "margin": "0 .05em 0 .1em",
+            "verticalAlign": "-0.1em",
+            "width": "1em",
+          }
+        }
+      />
+    </span>
+  </a>
+  <a
+    className="bigEmoji"
+    onClick={[Function]}
+  >
+    <span
+      className="undefined"
+      style={
+        Object {
+          "fontSize": 50,
+        }
+      }
+    >
+      <img
+        alt="😄"
+        className={undefined}
+        src="http://twemoji.maxcdn.com/2/72x72/1f604.png"
+        style={
+          Object {
+            "height": "1em",
+            "margin": "0 .05em 0 .1em",
+            "verticalAlign": "-0.1em",
+            "width": "1em",
+          }
+        }
+      />
+    </span>
+  </a>
+</div>
+`;
