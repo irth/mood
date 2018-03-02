@@ -16,10 +16,14 @@ const timeFromTimestamp = timestamp => {
   return `${leftPadNum(date.getHours())}:${leftPadNum(date.getMinutes())}`;
 };
 
-export default ({history}) => (
+export default ({history, onMoodEntryClick}) => (
   <div className="History">
     {history.map(entry => (
-      <div key={entry.id} className="MoodEntry">
+      <div
+        onClick={() => onMoodEntryClick(entry.id)}
+        role="button"
+        key={entry.id}
+        className="MoodEntry">
         <div className="Time">
           <div className="Date">{dateFromTimestamp(entry.time)}</div>
           <div className="Time">{timeFromTimestamp(entry.time)}</div>

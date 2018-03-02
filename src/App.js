@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import './App.css';
 
-import MoodChooser from './MoodChooser';
-import MoodHistory from './MoodHistory';
-
-const createMood = (id, mood) => ({id, mood, time: Date.now()});
+import MainView from './MainView';
+import EntryView from './EntryView';
 
 class App extends Component {
   constructor() {
     super();
-    this.state = this.loadState();
+    this.state = {
+      ...this.loadState(),
+      view: {name: 'MainView', args: null},
+    };
   }
 
   loadState() {
@@ -29,13 +30,20 @@ class App extends Component {
   }
 
   saveState() {
-    window.localStorage.setItem('state', JSON.stringify(this.state));
+    const {id, history} = this.state;
+    window.localStorage.setItem(
+      'state',
+      JSON.stringify({
+        id,
+        history,
+      }),
+    );
   }
 
-  onMoodSelected = which => {
+  onMoodCreated = moodEntry => {
     this.setState(
       oldState => ({
-        history: [createMood(oldState.id, which), ...oldState.history],
+        history: [moodEntry, ...oldState.history],
         id: oldState.id + 1,
       }),
       () => this.saveState(),
@@ -43,15 +51,27 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <div className="App">
-        <div className="upperCard">
-          <div className="HowAreYou">How are you feeling right now?</div>
-          <MoodChooser onSelected={this.onMoodSelected} />
-        </div>
-        <MoodHistory history={this.state.history} />
-      </div>
-    );
+    const {view} = this.state;
+
+    switch (view.name) {
+      case 'EntryView':
+        return (
+          <EntryView {...this.state.history.find(e => e.id == view.args.id)} />
+        );
+
+      case 'MainView':
+      default:
+        return (
+          <MainView
+            primaryKey={this.state.id}
+            history={this.state.history}
+            onMoodCreated={this.onMoodCreated}
+            onMoodEntryClick={id =>
+              this.setState({view: {name: 'EntryView', args: {id}}})
+            }
+          />
+        );
+    }
   }
 }
 export default App;
