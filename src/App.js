@@ -50,13 +50,46 @@ class App extends Component {
     );
   };
 
+  onNoteChange = (id, note) => {
+    console.log(id, note);
+    this.setState(
+      oldState => ({
+        history: oldState.history.map(entry => {
+          if (entry.id !== id) return entry;
+          return {
+            ...entry,
+            note,
+          };
+        }),
+      }),
+      () => this.saveState(),
+    );
+  };
+
+  onMoodDeleted = id => {
+    this.setState(
+      oldState => ({
+        history: oldState.history.filter(e => e.id !== id),
+        view: {name: 'MainView', args: null},
+      }),
+      () => this.saveState(),
+    );
+  };
+
   render() {
     const {view} = this.state;
 
     switch (view.name) {
       case 'EntryView':
         return (
-          <EntryView {...this.state.history.find(e => e.id == view.args.id)} />
+          <EntryView
+            {...this.state.history.find(e => e.id === view.args.id)}
+            onDeleteClick={() => this.onMoodDeleted(view.args.id)}
+            onNoteChange={note => this.onNoteChange(view.args.id, note)}
+            onBackClick={() =>
+              this.setState({view: {name: 'MainView', args: null}})
+            }
+          />
         );
 
       case 'MainView':

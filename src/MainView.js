@@ -27,7 +27,7 @@ export default class MainView extends Component {
 
   render() {
     return (
-      <div className="MainView">
+      <div className="MainView App">
         <div className="upperCard">
           <div className="HowAreYou">How are you feeling right now?</div>
           <MoodChooser onSelected={this.onMoodSelected} />
